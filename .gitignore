@@ -51,6 +51,12 @@ rag_storage*/
 examples/input/
 examples/output/
 output*/
+mini_output/
+mini_storage/
+
+# Sample files and debug storage
+samples/
+debug_storage*/
 
 # Miscellaneous
 .DS_Store
