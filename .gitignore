@@ -83,3 +83,19 @@ memory-bank/
 .claude/
 .cursor/
 CLAUDE.md
+# Database and vector storage files
+db/
+*.bin
+*.db
+*.sqlite
+*.sqlite3
+
+# Vector database specific
+vdb_*
+vector_storage/
+embeddings_cache/
+
+# Model cache and data
+model_cache/
+.cache/
+cache/
