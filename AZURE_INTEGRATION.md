@@ -1,4 +1,56 @@
-# Azure OpenAI Integration for RAG-Anything
+# Azure OpenAI Inte## Configuration
+
+### Method 1: Using env.azure-example (Recommended for Azure users)
+
+For a quick Azure OpenAI setup:
+
+1. **Copy the Azure example configuration:**
+   ```bash
+   cp env.azure-example .env
+   ```
+
+2. **Configure your Azure OpenAI settings in `.env`:**
+   ```env
+   # Replace with your actual values
+   LLM_BINDING_HOST=https://your-resource-name.openai.azure.com/openai/deployments/your-llm-deployment/chat/completions?api-version=2024-08-01-preview
+   LLM_BINDING_API_KEY=your_azure_openai_llm_api_key
+   AZURE_OPENAI_DEPLOYMENT=your-llm-deployment
+   
+   EMBEDDING_BINDING_HOST=https://your-resource-name.openai.azure.com/openai/deployments/your-embedding-deployment/embeddings?api-version=2023-05-15
+   EMBEDDING_BINDING_API_KEY=your_azure_openai_embedding_api_key
+   AZURE_EMBEDDING_DEPLOYMENT=your-embedding-deployment
+   ```
+
+### Method 2: Using env.example (Full configuration)
+
+For full configuration options:
+
+```bash
+cp env.example .env
+```
+
+Then configure the Azure OpenAI sections in `.env` as shown in the file comments.
+
+### Method 3: Separate Azure variables (For azure_integration/)
+
+If using the enhanced `azure_integration/` scripts, configure these in `.env`:
+
+```bash
+# Azure OpenAI Embedding Configuration
+AZURE_OPENAI_EMBEDDING_API_KEY=your_embedding_api_key
+AZURE_OPENAI_EMBEDDING_ENDPOINT=https://your-endpoint.openai.azure.com/
+AZURE_OPENAI_EMBEDDING_DEPLOYMENT=text-embedding-3-small
+AZURE_OPENAI_EMBEDDING_API_VERSION=2023-05-15
+
+# Azure OpenAI LLM Configuration  
+AZURE_OPENAI_LLM_API_KEY=your_llm_api_key
+AZURE_OPENAI_LLM_ENDPOINT=https://your-endpoint.openai.azure.com/
+AZURE_OPENAI_LLM_DEPLOYMENT=gpt-4o-mini
+AZURE_OPENAI_LLM_API_VERSION=2024-08-01-preview
+
+# Performance Settings (Important!)
+MAX_ASYNC=1  # Keep low to avoid Azure rate limits
+```hing
 
 This document describes the Azure OpenAI integration for RAG-Anything after reorganization.
 
@@ -37,6 +89,8 @@ AZURE_OPENAI_LLM_API_VERSION=2024-08-01-preview
 # Performance Settings (Important!)
 MAX_ASYNC=1  # Keep low to avoid Azure rate limits
 ```
+
+## Usage
 
 ### 2. Usage
 ```bash
